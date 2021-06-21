@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="comingSoon.css">
+  <meta charset="utf-8">
+  <title>Imran Inc</title>
+</head>
+<body>
+  <div class="bgimg">
+  <div class="topleft">
+    <img src="logo1.png">
+  </div>
+  <div class="middle">
+    <h1 class="big">COMING SOON</h1>
+    <hr>
+    <b><p id="demo" style="font-size: 36px;letter-spacing: 15px;"></p></b>
+  </div>
+  <div class="bottomleft">
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+  var countDownDate = new Date("June 28, 2021 00:00:00").getTime();
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
+    if (distance < 0) {
+      clearInterval(x);
+      document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+  }, 1000);
+</script>
+</html>
